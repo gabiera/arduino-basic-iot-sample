@@ -4,12 +4,21 @@ It contains the definition of routes and views for the application.
 """
 
 from flask import Flask, request
-import datetime
+import datetime, json
 app = Flask(__name__)
 app.debug = True
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
 devices = []
+
+from azure.servicebus import ServiceBusService
+srvns = 'iotsample0917ns'
+key_name = 'RootManageSharedAccessKey'
+key_value = '3nCF6PobWcyDyKxZDsqLkTeVBTA9TMMpFW/ZOCGr2+8='  
+sbs = ServiceBusService(service_namespace=srvns, shared_access_key_name=key_name, shared_access_key_value=key_value) 
+flag = sbs.create_event_hub('iotsample0917')
+print(flag)
+
 
 @app.route('/')
 def hi():
@@ -45,13 +54,23 @@ def get_device(devid):
 def recordTemp(devid):
     print(request.form)
     temp = request.form['temp']
-    with open(devid+'.csv', 'a') as filehandle:
-        filehandle.write(str(datetime.datetime.utcnow())+','+temp+'\n')
+    tdata = { 'DevId':devid,"Time":str(datetime.datetime.utcnow()),"Temperature":temp }
+    sbs.send_event('iotsample0917',json.dumps(tdata))
     curstate = get_device(devid)
     return curstate
 
+#if __name__ == '__main__':
+    #import os
+    #HOST = os.environ.get('SERVER_HOST', 'localhost')
+    #try:
+    #    PORT = int(os.environ.get('SERVER_PORT', '5555'))
+    #except ValueError:
+    #    PORT = 5555
+    #app.run(HOST, PORT)
 if __name__ == '__main__':
     import os
     HOST = '0.0.0.0'
     PORT = 5555
     app.run(HOST, PORT)
+
+
