@@ -1,0 +1,17 @@
+X_MS_VERSION
+_str
+MANAGEMENT_HOST
+partial
+RelayDescription
+DEFAULT_HTTP_TIMEOUT
+QueueDescription
+_MinidomXmlToObject
+ServiceBusManagementService
+NotificationHubDescription
+_validate_not_none
+MetricProperties
+TopicDescription
+_ServiceManagementClient
+MetricRollups
+_ServiceBusManagementXmlSerializer
+MetricValues

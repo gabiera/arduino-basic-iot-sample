@@ -1,0 +1,13 @@
+DEBUG_RESPONSES
+urlparse
+HTTP_PORT
+base64
+HTTPS_PORT
+DEBUG_REQUESTS
+url_quote
+_HTTPClient
+HTTPError
+_RequestsConnection
+os
+HTTPResponse
+sys

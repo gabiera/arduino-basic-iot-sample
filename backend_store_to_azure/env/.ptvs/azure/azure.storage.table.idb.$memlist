@@ -1,0 +1,10 @@
+TABLE_SERVICE_HOST_BASE
+Table
+TableSharedAccessPermissions
+DEV_TABLE_HOST
+Entity
+models
+_serialization
+tableservice
+TableService
+EntityProperty

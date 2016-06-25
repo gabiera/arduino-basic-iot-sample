@@ -1,0 +1,15 @@
+StorageServiceProperties
+AzureHttpError
+Logging
+EnumResultsBase
+AzureBatchValidationError
+SignedIdentifier
+AzureBatchOperationError
+AccessPolicy
+HourMetrics
+_list_of
+RetentionPolicy
+WindowsAzureData
+AzureException
+SignedIdentifiers
+MinuteMetrics

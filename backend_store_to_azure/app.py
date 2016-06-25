@@ -13,8 +13,8 @@ devices = []
 
 from azure.servicebus import ServiceBusService
 srvns = 'iotsample0917ns'
-key_name = 'RootManageSharedAccessKey'
-key_value = '3nCF6PobWcyDyKxZDsqLkTeVBTA9TMMpFW/ZOCGr2+8='  
+key_name = 'rootSAS'
+key_value = 'gTTf0bVKzFz2Ufjts8unUQRFMEsQORHwmTzAHtKwJng='  
 sbs = ServiceBusService(service_namespace=srvns, shared_access_key_name=key_name, shared_access_key_value=key_value) 
 flag = sbs.create_event_hub('iotsample0917')
 print(flag)
@@ -59,18 +59,14 @@ def recordTemp(devid):
     curstate = get_device(devid)
     return curstate
 
-#if __name__ == '__main__':
-    #import os
-    #HOST = os.environ.get('SERVER_HOST', 'localhost')
-    #try:
-    #    PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    #except ValueError:
-    #    PORT = 5555
-    #app.run(HOST, PORT)
 if __name__ == '__main__':
     import os
-    HOST = '0.0.0.0'
-    PORT = 5555
+    HOST = os.environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(os.environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
     app.run(HOST, PORT)
+
 
 

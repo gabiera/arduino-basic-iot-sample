@@ -1,0 +1,14 @@
+SubscriptionCloudCredentials
+__author__
+requests
+os
+OperationStatus
+logging
+json
+filters
+arm
+Service
+azure
+OperationStatusResponse
+AzureOperationResponse
+__version__

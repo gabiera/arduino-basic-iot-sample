@@ -1,0 +1,15 @@
+datetime
+_create_entry
+_unicode_type
+HeaderDict
+_KNOWN_SERIALIZATION_XFORMS
+_to_datetime
+_get_request_body
+_get_serialization_name
+_convert_class_to_xml
+_get_readable_id
+ast
+WindowsAzureData
+xml_escape
+sys
+_set_continuation_from_response_headers

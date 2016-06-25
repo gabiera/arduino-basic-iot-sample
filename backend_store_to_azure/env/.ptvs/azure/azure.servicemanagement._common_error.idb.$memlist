@@ -1,0 +1,9 @@
+AzureHttpError
+_ERROR_ASYNC_OP_TIMEOUT
+_validate_not_none
+_ERROR_UNKNOWN
+_ERROR_VALUE_NONE
+_ERROR_ASYNC_OP_FAILURE
+_ERROR_CONFLICT
+_ERROR_NOT_FOUND
+_general_error_handler
